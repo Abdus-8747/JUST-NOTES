@@ -138,7 +138,7 @@ const LandingPage = () => {
               </a>
 
               <a
-                href="mailto:abdus8747@gmail.com"
+                href="mailto:abdussamadshamsi486@gmail.com"
                 aria-label="Send Email"
                 className="flex flex-col items-center text-gray-600 hover:text-blue-600 transition text-xs"
               >
