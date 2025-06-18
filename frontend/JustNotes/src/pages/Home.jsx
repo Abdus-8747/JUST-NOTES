@@ -159,12 +159,10 @@ const Home = () => {
       <Modal
         isOpen={openAddEditModal.isShown}
         onRequestClose={() => setOpenAddEditModal({ isShown: false, type: "add", data: null })}
-        style={{
-          overlay: { backgroundColor: "rgba(0,0,0,0.2)" },
-        }}
+        overlayClassName="fixed inset-0 bg-slate-400/30 backdrop-blur-sm z-40 flex items-center justify-center px-4"
+        className="bg-white rounded-md w-full max-w-md sm:max-w-xl md:max-w-2xl p-4 sm:p-6 max-h-[90vh] overflow-y-auto shadow-xl"
         contentLabel={openAddEditModal.type === "add" ? "Add Note" : "Edit Note"}
-        className="w-[40%] max-h-[75vh] bg-white rounded-md mx-auto mt-14 p-6 overflow-auto shadow-lg"
-        ariaHideApp={false} // You can configure this according to your app setup
+        ariaHideApp={false}
       >
         <AddEditNotes
           type={openAddEditModal.type}
@@ -182,20 +180,20 @@ const Home = () => {
         onClose={handleCloseToast}
       />
       {/* Footer */}
-<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2">
-  <footer className="text-center text-sm text-gray-500 py-3">
-    &copy; 2025 Just Notes. Built with 💙 by{' '}
-    <Link
-      to="https://www.linkedin.com/in/abdus-samad-shamsi-a61161286/"
-      className="text-blue-500"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Abdus Samad
-    </Link>
-    .
-  </footer>
-</div>
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2">
+        <footer className="text-center text-sm text-gray-500 py-3">
+          &copy; 2025 Just Notes. Built with 💙 by{' '}
+          <Link
+            to="https://www.linkedin.com/in/abdus-samad-shamsi-a61161286/"
+            className="text-blue-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abdus Samad
+          </Link>
+          .
+        </footer>
+      </div>
 
     </>
   )
