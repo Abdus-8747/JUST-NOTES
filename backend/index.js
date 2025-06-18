@@ -1,10 +1,10 @@
 require("dotenv").config();
 
-const config = require("./config.json")
+
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 
-mongoose.connect(config.connectionString)
+mongoose.connect(process.env.MONGO_URL)
 
 const User = require('./models/user.model')
 const Note = require('./models/note.model')
