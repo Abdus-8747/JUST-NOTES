@@ -1,6 +1,6 @@
-export const BASE_URL = 'http://localhost:8000'
+import axios from "axios";
 
-import axios from "axios"
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
@@ -8,19 +8,18 @@ const axiosInstance = axios.create({
     headers: {
         "Content-Type": "application/json",
     }
-})
+});
 
+// 🔐 Automatically attach token if available
 axiosInstance.interceptors.request.use(
     (config) => {
-        const accessToken = localStorage.getItem("token")
-        if(accessToken) {
-            config.headers.Authorization = `Bearer ${accessToken}`
+        const token = localStorage.getItem("token");
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
         }
-        return config
+        return config;
     },
-    (error) => {
-        return Promise.reject(error)
-    }
-)
+    (error) => Promise.reject(error)
+);
 
 export default axiosInstance;

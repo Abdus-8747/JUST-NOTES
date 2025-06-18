@@ -16,14 +16,6 @@ const EmptyCard = ({ message = "No Notes Found" }) => {
         <p className="text-sm text-gray-500 mt-2 text-center px-4">
           Looks like there's nothing here yet. Create a new note to get started.
         </p>
-
-        {/* Optional: Add button to create a note directly from empty state */}
-        <button
-          onClick={() => navigate('/')} // or open modal if you want
-          className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition"
-        >
-          <MdAdd size={20} /> Add Note
-        </button>
       </div>
     </div>
   )
