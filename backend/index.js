@@ -26,7 +26,12 @@ const apiLimiter = rateLimit({
 });
 
 // Middleware
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin: "https://just-notes-1.onrender.com",
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+}));
 app.use(express.json());
 app.use(apiLimiter); // ⛔ Apply rate limiting globally
 

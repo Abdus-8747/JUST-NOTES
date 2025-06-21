@@ -5,6 +5,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:80
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
     timeout: 10000,
+    withCredentials: true,
     headers: {
         "Content-Type": "application/json",
     }
