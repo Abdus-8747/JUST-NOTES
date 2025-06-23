@@ -35,7 +35,7 @@ const Login = () => {
       if (error.response?.data?.message) {
         setError(error.response.data.message)
       } else {
-        setError('An unexpected error occurred. Please try again.')
+        setError('Please Refresh The Page Once!')
       }
     } finally {
       setIsLoading(false)

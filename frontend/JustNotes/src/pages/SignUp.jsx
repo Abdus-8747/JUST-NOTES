@@ -53,7 +53,7 @@ const SignUp = () => {
       if (err.response?.data?.message) {
         setError(err.response.data.message);
       } else {
-        setError('An unexpected error occurred, please try again!');
+        setError('Please Refresh The Page Once!');
       }
     }
   };
