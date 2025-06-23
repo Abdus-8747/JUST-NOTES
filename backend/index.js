@@ -13,6 +13,8 @@ const { authenticateToken } = require("./utils");
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 // ✅ Global Rate Limiter: 20 requests per 15 minutes
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -216,10 +218,10 @@ app.get("/search-notes", authenticateToken, async (req, res) => {
     res.status(500).json({ error: true, message: "Internal Server Error" });
   }
 });
-
+const PORT = process.env.PORT || 8000
 // Server
-app.listen(8000, () => {
-  console.log("Server running on port 8000");
+app.listen(PORT, () => {
+  console.log("Server running on port",PORT);
 });
 
 module.exports = app;
